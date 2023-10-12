@@ -9,6 +9,11 @@ app.use(cors());
 
 const PORT = process.env.PORT || 8080;
 
+app.get('/', (req, res) =>{
+    res.sendStatus(200);
+    res.send("Server is running")
+})
+
 app.post("/webhook", async (req, res) => {
     var id = (res.req.body.session).substr(43);
     console.log(id)
